@@ -3,7 +3,7 @@ import pytube as pt
 from io import BytesIO
 
 @st.cache_resource(show_spinner=False)
-def download_youtube_video(url : str, only_audio : bool=False):
+def download_youtube_video_to_buffer(url : str, only_audio : bool=False):
 	yt_video = pt.YouTube(url)
 	
 	list_streams = (

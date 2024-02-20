@@ -1,6 +1,6 @@
 import streamlit as st
 import pytube as pt
-from download_youtube_video import download_youtube_video
+from download_youtube_video import download_youtube_video_to_buffer
 
 st.set_page_config(
 	page_title='Youtube Download', 
@@ -31,7 +31,7 @@ if url:
 		)
 		with spinner_placeholder:
 			with st.spinner(text_spinner):
-				buffer = download_youtube_video(url=url, only_audio=only_audio)
+				buffer = download_youtube_video_to_buffer(url=url, only_audio=only_audio)
 			st.success('Download completed', icon='✅')
 		with col_click_download:
 			st.download_button(
